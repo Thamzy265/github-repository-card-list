@@ -55,7 +55,8 @@ describe("formatRelativeTime", () => {
   });
 
   it("picks the largest fitting unit", () => {
-    expect(formatRelativeTime("2025-07-08T12:00:00Z")).toBe("1 year ago");
+    expect(formatRelativeTime("2024-07-08T12:00:00Z")).toBe("2 years ago");
+    expect(formatRelativeTime("2025-07-08T12:00:00Z")).toBe("last year");
     expect(formatRelativeTime("2026-06-08T12:00:00Z")).toBe("last month");
     expect(formatRelativeTime("2026-07-07T12:00:00Z")).toBe("yesterday");
     expect(formatRelativeTime("2026-07-08T11:30:00Z")).toBe(
